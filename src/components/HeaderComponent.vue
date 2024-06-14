@@ -4,7 +4,7 @@
             class="fixed-header container d-flex margin-x-auto rounded-2 align-items-center justify-content-between">
             <div class="d-flex h-100 align-items-center">
                 <div class="logo-img-container d-flex align-items-center">
-                    <img class="img-fluid hype-color-invert" src="../assets/images/portfolio-logo.png" alt="logo" />
+                    <img class="img-fluid hype-color-invert rounded-circle" src="/public/images/logo_paradiso.jpeg" alt="logo" />
                 </div>
                 <div id="hype-nav-menu" class="d-flex h-100 d-none d-lg-block align-items-center">
                     <ul class="navbar-nav h-100 mb-2 mb-lg-0 d-flex flex-row align-items-center">
@@ -180,9 +180,13 @@ header {
         transform: translateX(-50%);
         background-color: inherit;
         color: $text-primary-color !important;
-        .img-container {
+        .logo-img-container {
             width: 7%;
-            min-width: 90px;
+            width: 90px;
+            img {
+                width: 70px;
+                object-fit: cover;
+            }
         }
         #hype-nav-menu {
             .custom-border {
