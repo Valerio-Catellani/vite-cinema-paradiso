@@ -4,7 +4,7 @@
             class="fixed-header container d-flex margin-x-auto rounded-2 align-items-center justify-content-between">
             <div class="d-flex h-100 align-items-center">
                 <div class="logo-img-container d-flex align-items-center">
-                    <img class="img-fluid hype-color-invert rounded-circle" src="/public/images/logo_paradiso.jpeg"
+                    <img class="img-fluid hype-color-invert rounded-circle" src="/public/images/cinema_paradiso_logo.png"
                         alt="logo" />
                 </div>
                 <div id="hype-nav-menu" class="d-flex h-100 d-none d-lg-block align-items-center">
