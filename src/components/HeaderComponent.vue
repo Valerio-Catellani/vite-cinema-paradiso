@@ -4,7 +4,8 @@
             class="fixed-header container d-flex margin-x-auto rounded-2 align-items-center justify-content-between">
             <div class="d-flex h-100 align-items-center">
                 <div class="logo-img-container d-flex align-items-center">
-                    <img class="img-fluid hype-color-invert rounded-circle" src="/public/images/logo_paradiso.jpeg" alt="logo" />
+                    <img class="img-fluid hype-color-invert rounded-circle" src="/public/images/logo_paradiso.jpeg"
+                        alt="logo" />
                 </div>
                 <div id="hype-nav-menu" class="d-flex h-100 d-none d-lg-block align-items-center">
                     <ul class="navbar-nav h-100 mb-2 mb-lg-0 d-flex flex-row align-items-center">
@@ -12,7 +13,7 @@
                             class="nav-item d-flex align-items-center px-3 custom-border">
                             <router-link :to="links.path" class="nav-link" exact>{{
                                 capitalizeString(links.name)
-                                }}</router-link>
+                            }}</router-link>
                         </li>
                     </ul>
                 </div>
@@ -45,11 +46,11 @@
                     class="bar-input active-color rounded-bottom-2 position-absolute container d-none">
                     <div class="w-100 d-flex align-content-center justify-content-center p-3">
                         <ul class="fs-6 w-100 text-decoration-none list-unstyled text-center gap-2 m-0">
-                            <li class="py-1 border-bottom border-dark border-1">
-                                <router-link class="nav-link" to="/">Home</router-link>
-                            </li>
-                            <li class="py-1 border-bottom border-dark border-1">
-                                <router-link class="nav-link" to="/projects">All Projects</router-link>
+                            <li v-for="links in navLinks" :key="links.id"
+                                class="py-1 border-bottom border-dark border-1">
+                                <router-link :to="links.path" class="nav-link" exact>{{
+                                    capitalizeString(links.name)
+                                    }}</router-link>
                             </li>
                         </ul>
                     </div>
@@ -151,26 +152,32 @@ export default {
 </script>
 <style lang="scss" scoped>
 @use '../assets/styles/partials/_variables' as *;
+
 .active-color {
     background-color: black;
 }
+
 header {
     height: 75px;
     background-color: $background-zero-color;
     box-shadow: 2px 2px 5px $shadow-primary-color;
+
     .active-color {
         background-color: $background-secondary-color !important;
         //box-shadow: 2px 2px 5px black;
     }
+
     .window-movement {
         transform: translate(-50%, 10px) !important;
         transition: transform 0.3s ease-out;
         box-shadow: 2px 2px 2px $shadow-primary-color;
     }
+
     .border-opened-menu {
         border-bottom-left-radius: 0 !important;
         border-bottom-right-radius: 0 !important;
     }
+
     #hype-custom-nav {
         position: fixed;
         top: 0;
@@ -180,21 +187,26 @@ header {
         transform: translateX(-50%);
         background-color: inherit;
         color: $text-primary-color !important;
+
         .logo-img-container {
             width: 7%;
             width: 90px;
+
             img {
                 width: 70px;
                 object-fit: cover;
             }
         }
+
         #hype-nav-menu {
             .custom-border {
                 border-right: 2px solid $background-tertiary-color;
             }
+
             li {
                 position: relative;
                 height: 80%;
+
                 .router-link-exact-active {
                     &::after {
                         content: "";
@@ -206,6 +218,7 @@ header {
                         background-color: $active-primary-color;
                     }
                 }
+
                 a {
                     &::after {
                         content: "";
@@ -217,6 +230,7 @@ header {
                         background-color: $active-primary-color;
                         transition: width 0.2s ease-out;
                     }
+
                     &:hover::after {
                         width: 80%;
                         /* Modifica la larghezza quando passi sopra con il mouse */
@@ -224,14 +238,17 @@ header {
                 }
             }
         }
+
         .user-account {
             color: white;
             background-color: inherit;
+
             li {
                 &:hover {
                     background-color: $background-tertiary-color;
                 }
             }
+
             .icon-container {
                 width: 40px;
                 height: 57.5px;
@@ -240,16 +257,19 @@ header {
                 align-items: center;
                 padding-bottom: calc((75px - 40px) / 2);
             }
+
             .bar-input {
                 top: 100%;
                 left: 0%;
                 background-color: inherit;
                 box-shadow: 2px 2px 2px $shadow-primary-color;
             }
+
             .search-bar-input {
                 height: 70px;
             }
         }
+
         button {
             &:hover {
                 color: white;
