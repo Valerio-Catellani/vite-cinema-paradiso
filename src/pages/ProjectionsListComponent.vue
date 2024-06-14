@@ -15,7 +15,7 @@ export default {
     },
 
     created() {
-        store.methods.getAllProjections();
+        store.methods.getAllElements('projections');
     }
 }
 </script>

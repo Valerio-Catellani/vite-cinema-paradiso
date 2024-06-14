@@ -15,7 +15,7 @@ export default {
         }
     },
     created() {
-        store.methods.getAllMovies();
+        store.methods.getAllElements('movies');
     }
 }
 
