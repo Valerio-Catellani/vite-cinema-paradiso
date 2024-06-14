@@ -13,16 +13,12 @@
                             class="nav-item d-flex align-items-center px-3 custom-border">
                             <router-link :to="links.path" class="nav-link" exact>{{
                                 capitalizeString(links.name)
-                            }}</router-link>
+                                }}</router-link>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="user-account gap-3 d-flex fs-3 align-self-stretch align-items-end">
-                <div id="hype-nav-search-button" ref="hypeNavSearchButton" class="icon-container rounded-top-2 order-0"
-                    role="button" @click="toggleMenu('hypeNavSearchBarInput', $event)">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
                 <div id="hype-nav-login-button" ref="hypeNavLoginButton"
                     class="icon-container rounded-top-2 d-flex flex-column justify-content-center order-2"
                     role="button"><a href="http://localhost:8000/login" class="text-decoration-none text-white">
@@ -50,7 +46,7 @@
                                 class="py-1 border-bottom border-dark border-1">
                                 <router-link :to="links.path" class="nav-link" exact>{{
                                     capitalizeString(links.name)
-                                    }}</router-link>
+                                }}</router-link>
                             </li>
                         </ul>
                     </div>
