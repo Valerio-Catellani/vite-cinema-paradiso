@@ -15,7 +15,8 @@ export default {
         }
     },
     created() {
-        store.methods.getAllElements('movies');
+        this.store.methods.getAllElements('movies');
+        this.store.methods.getAllElements('projections');
     }
 }
 

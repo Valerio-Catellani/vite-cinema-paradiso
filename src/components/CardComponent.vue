@@ -1,7 +1,8 @@
 <template>
     <div>
         <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="..." />
+            <img :src="store.imgBasePath + (item.poster_path || item.room_image)" class="card-img-top"
+                :alt="item.title || item.name" />
             <div class="card-body">
                 <h5 class="card-title">{{ item.title || item.name }}</h5>
                 <h6 v-if="item.alias">{{ item.alias }}</h6>
@@ -19,6 +20,7 @@
 export default {
     name: "CardComponent",
     props: ["item"],
+
 };
 </script>
 

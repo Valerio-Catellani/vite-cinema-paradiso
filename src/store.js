@@ -82,7 +82,7 @@ export const store = reactive({
                   break;
                }
             }
-            console.log(store.api_data);
+            console.log('all api_data', store.api_data);
          }).catch((error) => {
             console.log(error);
             router.push({ name: 'not-found' })
