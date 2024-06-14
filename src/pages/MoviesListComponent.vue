@@ -1,17 +1,24 @@
 <template>
     <div>
-MoviesListComponent
+        MoviesListComponent
     </div>
 </template>
 
 <script>
 import { store } from '../store';
-    export default {
+export default {
 
-        name: 'MoviesListComponent',
+    name: 'MoviesListComponent',
+    data() {
+        return {
+            store
+        }
+    },
+    created() {
+        store.methods.getAllMovies();
     }
+}
+
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
