@@ -4,6 +4,7 @@ import MoviesListComponent from './pages/MoviesListComponent.vue';
 import ProjectionsListComponent from './pages/ProjectionsListComponent.vue';
 import MovieDetailsComponent from './pages/MovieDetailsComponent.vue';
 import ProjectionDetailsComponent from './pages/ProjectionDetailsComponent.vue';
+import RoomDetailsComponent from './pages/RoomDetailsComponent.vue';
 import NotFoundComponent from './pages/NotFoundComponent.vue';
 import RoomsListComponent from './pages/RoomsListComponent.vue';
 
@@ -58,6 +59,14 @@ const router = createRouter({
                 visible: false
             },
             component: MovieDetailsComponent
+        },
+        {
+            path: '/rooms/:id',
+            name: 'rooms-details',
+            meta: {
+                visible: false
+            },
+            component: RoomDetailsComponent
         },
         {
             path: '/:pathMatch(.*)*',

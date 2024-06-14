@@ -1,11 +1,11 @@
 <template>
-    <header class="hype-shadow-white z-1">
+    <header class=" z-1">
         <nav id="hype-custom-nav" ref="hypeCustomNav"
             class="fixed-header container d-flex margin-x-auto rounded-2 align-items-center justify-content-between">
             <div class="d-flex h-100 align-items-center">
                 <div class="logo-img-container d-flex align-items-center">
-                    <img class="img-fluid hype-color-invert rounded-circle" src="/public/images/cinema_paradiso_logo.png"
-                        alt="logo" />
+                    <img class="img-fluid hype-color-invert rounded-circle"
+                        src="/public/images/cinema_paradiso_logo.png" alt="logo" />
                 </div>
                 <div id="hype-nav-menu" class="d-flex h-100 d-none d-lg-block align-items-center">
                     <ul class="navbar-nav h-100 mb-2 mb-lg-0 d-flex flex-row align-items-center">
@@ -156,7 +156,6 @@ export default {
 header {
     height: 75px;
     background-color: $background-zero-color;
-    box-shadow: 2px 2px 5px $shadow-primary-color;
 
     .active-color {
         background-color: $background-secondary-color !important;

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="card" style="width: 18rem">
-            <img :src="store.imgBasePath + (item.poster_path || item.room_image)" class="card-img-top"
+            <img :src="this.store.imgBasePath + (item.poster_path || item.room_image)" class="card-img-top"
                 :alt="item.title || item.name" />
             <div class="card-body">
                 <h5 class="card-title">{{ item.title || item.name }}</h5>
@@ -17,9 +17,15 @@
 </template>
 
 <script>
+import { store } from "../store";
 export default {
     name: "CardComponent",
     props: ["item"],
+    data() {
+        return {
+            store
+        };
+    }
 
 };
 </script>

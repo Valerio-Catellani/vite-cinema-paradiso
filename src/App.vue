@@ -1,21 +1,25 @@
 <template>
   <HeaderComponent></HeaderComponent>
-   <main class="vh-100">
+  <main>
     <router-view></router-view>
   </main>
-  <FooterComponent></FooterComponent>
+  <footer>
+    <FooterComponent></FooterComponent>
+  </footer>
 </template>
 
 <script>
 import { store } from './store';
 import CardComponent from './components/CardComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
+import FooterComponent from './components/FooterComponent.vue';
 
-  export default {
-    name: 'App',
+export default {
+  name: 'App',
   components: {
     HeaderComponent,
     CardComponent,
+    FooterComponent,
 
   },
   data() {
@@ -26,6 +30,4 @@ import HeaderComponent from './components/HeaderComponent.vue';
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

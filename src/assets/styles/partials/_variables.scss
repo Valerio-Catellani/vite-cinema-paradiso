@@ -11,6 +11,7 @@ $text-primary-color: white;
 $text-secondary-color: red;
 
 $shadow-primary-color: black;
+$footerText: white;
 
 // Frontend variables from the Logo
 
@@ -19,9 +20,21 @@ $background-tertiary-color: #e6b42c;
 $background-secondary-color: #bb952e;
 $background-primary-color: #d98825;
 $background-zero-color: #b6791d;
+$background-footer: #001a33;
 
 $active-primary-color: rgb(22, 161, 149);
 $active-secondary-color: rgb(140, 228, 206);
 $active-tertiary-color: rgb(193, 214, 216);
 
 $basefont: "Roboto", sans-serif;
+
+// Gradiente per Hero e Footer
+
+// .bg-hero-gradient {
+//     background: linear-gradient(0deg,
+//         $background-zero-color 0%,
+//         $background-primary-color 20%,
+//         $background-secondary-color 40%,
+//         $background-tertiary-color 60%,
+//         $background-4th-color 100%);
+//   }
