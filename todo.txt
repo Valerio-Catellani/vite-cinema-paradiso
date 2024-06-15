@@ -6,3 +6,9 @@ aggiungere la colonna isense alla tabella movie (se vogliamo mostrare quali film
 fare la pagina contatti (usando il background dei pop-corn?)
 migliorare carosello (ad esempio il calc( 100vh - ??px))
 scrivere una documentazione del sito sia backoffice sia frontoffice (quindi il discorso di presentazione)
+rendere responsive le card?
+sistemare la pagina movies che ha in imput data che filtra i film per presenza di una proiezione il giorno scelto
+$movies = Movie::whereHas('rooms', function ($query) use ($date) {
+                $query->where('date', $date);
+            })->paginate(10);
+decidere come fare /projections consideranto che il cliente deve trovare facilmente quello che cerca
