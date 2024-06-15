@@ -1,15 +1,24 @@
 <template>
     <div>
         MoviesListComponent
-        <!-- <select name="" id="" class="form-select" v-model="date">
-            <option value="">tutti i film</option>
-            <option :value="today">oggi</option>
-            <option :value="tomorrow">domani</option>
-            <option :value="dayAfterTomorrow">dopodomani</option>
-        </select> -->
-        <input type="date" v-model="date" @change="getFilmFromDate()">
+       
+         <input type="date" v-model="date" @change="getFilmFromDate()">
         <div class="col-12 col-lg-6" v-for="movie in store.api_data.movies.allMovies.data" :key="movie.id">
             <CardComponent :item="movie" />
+        </div> 
+
+        <div class="card" >
+            <img src="/public/images/right-part.jpg" class="card-img-top"
+                alt="" />
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <h6 v-if="item.alias"></h6>
+                <p class="card-text">
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
     </div>
 </template>
@@ -28,10 +37,7 @@ export default {
         return {
             store,
             date: '',
-            // today: '',
-            // params: {
-            //     date: this.date
-            // }
+           
         }
     },
     methods: {
@@ -41,7 +47,8 @@ export default {
     },
     created() {
         this.store.methods.getAllElements('movies');
-        this.store.methods.getAllElements('projections');
+        this.store.methods.getAllElements('projections'); 
+        this.store.methods.getAllElements('movies', { date: this.date });
     }
 }
 

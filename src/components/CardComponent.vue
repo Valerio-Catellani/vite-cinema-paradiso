@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="card" style="width: 18rem">
+        <div class="card" >
             <img :src="this.store.imgBasePath + (item.poster_path || item.room_image)" class="card-img-top"
                 :alt="item.title || item.name" />
             <div class="card-body">

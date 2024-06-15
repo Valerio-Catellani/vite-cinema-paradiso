@@ -7,6 +7,7 @@ import ProjectionDetailsComponent from './pages/ProjectionDetailsComponent.vue';
 import RoomDetailsComponent from './pages/RoomDetailsComponent.vue';
 import NotFoundComponent from './pages/NotFoundComponent.vue';
 import RoomsListComponent from './pages/RoomsListComponent.vue';
+import ContactComponent from './pages/ContactComponent.vue';
 
 
 const router = createRouter({
@@ -69,13 +70,21 @@ const router = createRouter({
             component: RoomDetailsComponent
         },
         {
+            path: '/contacts',
+            name: 'contacts',
+            meta: {
+                visible: true
+            },
+            component: ContactComponent
+        },
+        {
             path: '/:pathMatch(.*)*',
             name: 'not-found',
             meta: {
                 visible: false
             },
             component: NotFoundComponent
-        }
+        } 
     ]
 });
 export { router };
