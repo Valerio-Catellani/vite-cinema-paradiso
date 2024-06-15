@@ -1,7 +1,7 @@
 <template>
     <header class=" z-1">
         <nav id="hype-custom-nav" ref="hypeCustomNav"
-            class="fixed-header container d-flex margin-x-auto rounded-2 align-items-center justify-content-between">
+            class="fixed-header container hype-w-80x100 d-flex margin-x-auto rounded-2 align-items-center justify-content-between">
             <div class="d-flex h-100 align-items-center">
                 <div class="logo-img-container d-flex align-items-center">
                     <img class="img-fluid hype-color-invert rounded-circle"
@@ -10,7 +10,8 @@
                 <div id="hype-nav-menu" class="d-flex h-100 d-none d-lg-block align-items-center">
                     <ul class="navbar-nav h-100 mb-2 mb-lg-0 d-flex flex-row align-items-center">
                         <li v-for="links in navLinks" :key="links.id"
-                            class="nav-item d-flex align-items-center px-3 custom-border">
+                            class="nav-item d-flex align-items-center px-3 custom-border"
+                            @click="this.store.methods.changePage()">
                             <router-link :to="links.path" class="nav-link" exact>{{
                                 capitalizeString(links.name)
                                 }}</router-link>
@@ -43,7 +44,8 @@
                     <div class="w-100 d-flex align-content-center justify-content-center p-3">
                         <ul class="fs-6 w-100 text-decoration-none list-unstyled text-center gap-2 m-0">
                             <li v-for="links in navLinks" :key="links.id"
-                                class="py-1 border-bottom border-dark border-1">
+                                class="py-1 border-bottom border-dark border-1"
+                                @click="this.store.methods.changePage()">
                                 <router-link :to="links.path" class="nav-link" exact>{{
                                     capitalizeString(links.name)
                                 }}</router-link>
@@ -61,11 +63,13 @@
 </template>
 <script>
 import { capitalize } from 'vue';
+import { store } from '../store.js';
 export default {
     name: 'HeaderComponent',
     data() {
         return {
             openElement: null,
+            store,
             eventTarget: {
                 originalTemplate: '',
                 eventElement: null,

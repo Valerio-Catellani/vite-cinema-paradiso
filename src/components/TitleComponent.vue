@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="text-center corsive-text display-2">Cinema <span class="d-block">Paradiso</span></h1>
+        <h1 class="text-center corsive-text display-1">Cinema <span class="d-block">Paradiso</span></h1>
     </div>
 </template>
 

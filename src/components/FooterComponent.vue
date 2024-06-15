@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="footer-cta pt-2 pb-5">
                     <div class="row">
-                        <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="col-xl-4 col-md-4 mb-3">
                             <div class="single-cta">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div class="cta-text">
@@ -13,7 +13,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="col-xl-4 col-md-4 mb-3">
                             <div class="single-cta">
                                 <i class="fas fa-phone"></i>
                                 <div class="cta-text">
@@ -22,7 +22,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="col-xl-4 col-md-4 mb-3">
                             <div class="single-cta">
                                 <i class="far fa-envelope-open"></i>
                                 <div class="cta-text">
@@ -33,26 +33,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-content pt-5 pb-5">
+                <div class="footer-content py-2">
                     <div class="row">
-                        <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="col-xl-4 col-lg-4 mb-5">
                             <div class="footer-widget">
-                                <div class="footer-logo">
+                                <div class="footer-logo d-flex justify-content-center ">
                                     <a href="index.html"><img src="/public/images/cinema_paradiso_logo.png"
                                             class="img-fluid hype-color-invert" alt="logo"></a>
                                 </div>
                                 <div class="footer-text">
                                     <p>Cinema paradiso, un esperienza paradisiaca.</p>
                                 </div>
-                                <div class="footer-social-icon">
-                                    <span>Follow us</span>
+                                <div class="footer-social-icon my-5 my-lg-3">
+                                    <span>Seguici</span>
                                     <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
                                     <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
                                     <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
                             <div class="footer-widget">
                                 <div class="footer-widget-heading">
                                     <h3>Link Utili</h3>
@@ -67,7 +67,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="col-xl-4 col-lg-4 col-md-6 mb-5">
                             <div class="footer-widget">
                                 <div class="footer-widget-heading">
                                     <h3>Inscriviti alla newsletter</h3>

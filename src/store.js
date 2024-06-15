@@ -45,6 +45,11 @@ export const store = reactive({
       },
    },
 
+
+   animation: {
+      changePage: true,
+   },
+
    params: {
 
    },
@@ -112,6 +117,13 @@ export const store = reactive({
             router.push({ name: 'not-found' })
          })
       },
+
+      changePage() {
+         store.animation.changePage = true;
+         setTimeout(() => {
+            store.animation.changePage = false;
+         }, 1000);
+      }
 
    },
 

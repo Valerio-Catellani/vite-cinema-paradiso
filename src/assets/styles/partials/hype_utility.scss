@@ -2,7 +2,7 @@ $increment_1: 1;
 
 @for $i from 1 through 100 {
   .hype-w-#{($i * $increment_1)}x100 {
-    width: ($i * $increment_1) * 1%;
+    width: ($i * $increment_1) * 1% !important;
   }
 }
 

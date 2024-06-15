@@ -1,28 +1,30 @@
 <template>
   <div>
-    <div class="section section-carusel container bg-hero-gradient">
-      <TitleComponent></TitleComponent>
-      <div class="row">
-        <div class="col-12 col-lg-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-          quasi necessitatibus id laboriosam vitae. Accusamus quos soluta rerum
-          illum repellat sit distinctio error ipsam incidunt vel facilis alias,
-          necessitatibus aspernatur velit unde doloremque quae a veniam eaque
-          expedita, corrupti possimus adipisci numquam nihil! Totam, earum.
-          Repudiandae neque reiciendis hic adipisci officia laudantium. Tenetur
-          veniam ratione error et sint nihil fugit culpa, labore recusandae nam,
-          dolores, officia obcaecati nesciunt deleniti sequi nostrum! Libero
-          dicta
-        </div>
-        <div class="col-12 col-lg-7">
-          <MyCarusel />
+    <div class="section section-carusel sepia-gradient">
+      <div class="container">
+        <TitleComponent></TitleComponent>
+        <div class="row">
+          <div class="col-12 col-lg-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+            quasi necessitatibus id laboriosam vitae. Accusamus quos soluta rerum
+            illum repellat sit distinctio error ipsam incidunt vel facilis alias,
+            necessitatibus aspernatur velit unde doloremque quae a veniam eaque
+            expedita, corrupti possimus adipisci numquam nihil! Totam, earum.
+            Repudiandae neque reiciendis hic adipisci officia laudantium. Tenetur
+            veniam ratione error et sint nihil fugit culpa, labore recusandae nam,
+            dolores, officia obcaecati nesciunt deleniti sequi nostrum! Libero
+            dicta
+          </div>
+          <div class="col-12 col-lg-7">
+            <!-- <MyCarusel /> -->
+          </div>
         </div>
       </div>
     </div>
     <div class="fixed-background">
       <div class="container info-container d-flex flex-column gap-5">
         <div
-          class="d-flex hype-w-60x100 rounded-5 bg-light my-5 p-3 gradient-white-top shadow-white justify-content-center align-items-center">
+          class="d-flex flex-column flex-lg-row info-animate w-100 rounded-5 bg-light my-5 p-3 gradient-white-top shadow-white justify-content-center align-items-center">
           <div class="img-container rounded-circle overflow-hidden me-4">
             <img class="img-fluid" src="/public/images/wrapper_paradiso_2.jpeg" alt="logo" />
           </div>
@@ -45,11 +47,11 @@
           </div>
         </div>
         <div
-          class="d-flex hype-w-60x100 rounded-5 bg-light my-5 p-3 gradient-white-top shadow-white justify-content-center align-items-center align-self-end">
-          <div class="img-container rounded-circle overflow-hidden me-4 order-2">
+          class="d-flex w-100 flex-column flex-lg-row info-animate rounded-5 bg-light my-5 p-3 gradient-white-top shadow-white justify-content-center align-items-center align-self-end">
+          <div class="img-container rounded-circle overflow-hidden me-4 order-lg-2">
             <img class="img-fluid" src="/public/images/wrapper_paradiso_2.jpeg" alt="logo" />
           </div>
-          <div class="order-1 p-2">
+          <div class="order-lg-1 p-2">
             <h3>I Nostri Orari</h3>
             <P>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -119,5 +121,12 @@ export default {
 
 .info-container {
   padding: 5rem 10px;
+
+  .info-animate {
+    @media screen and (min-width: 992px) {
+      width: 75% !important;
+      ;
+    }
+  }
 }
 </style>

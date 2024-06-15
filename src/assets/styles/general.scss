@@ -21,3 +21,11 @@ $fa-font-path: "../fonts/webfonts";
 .corsive-text {
   font-family: "Lobster", cursive;
 }
+
+.sepia-gradient {
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 43%,
+    rgba(125, 74, 23, 0.6) 100%
+  );
+}

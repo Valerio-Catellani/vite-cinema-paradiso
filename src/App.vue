@@ -1,11 +1,14 @@
 <template>
+  <SceneComponent :sceneInfo="'right'"></SceneComponent>
+  <SceneComponent :sceneInfo="'left'"></SceneComponent>
+  <!-- <PageLoader v-if="store.animation.changePage"></PageLoader> -->
   <HeaderComponent></HeaderComponent>
   <main>
-    <router-view></router-view>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
   </main>
-  <footer>
-    <FooterComponent></FooterComponent>
-  </footer>
+  <FooterComponent></FooterComponent>
 </template>
 
 <script>
@@ -13,6 +16,8 @@ import { store } from './store';
 import CardComponent from './components/CardComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
+import SceneComponent from './components/SceneComponent.vue';
+import PageLoader from './components/PageLoader.vue';
 
 export default {
   name: 'App',
@@ -20,6 +25,8 @@ export default {
     HeaderComponent,
     CardComponent,
     FooterComponent,
+    SceneComponent,
+    PageLoader
 
   },
   data() {
@@ -30,4 +37,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
