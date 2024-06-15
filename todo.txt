@@ -1,0 +1,8 @@
+to do
+mettere le card in /rooms e /movies (adesso le trovate in /contacts)
+sistemare il card component che per il momento ha una prop item per adattarsi sia ai movies sia alle rooms
+mettere il v-if nel cerchietto che indica che il film è isense
+aggiungere la colonna isense alla tabella movie (se vogliamo mostrare quali film sono isense)
+fare la pagina contatti (usando il background dei pop-corn?)
+migliorare carosello (ad esempio il calc( 100vh - ??px))
+scrivere una documentazione del sito sia backoffice sia frontoffice (quindi il discorso di presentazione)
