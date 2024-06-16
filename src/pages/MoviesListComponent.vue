@@ -1,23 +1,16 @@
 <template>
-    <div>
-        MoviesListComponent
-       
-         <input type="date" v-model="date" @change="getFilmFromDate()">
-        <div class="col-12 col-lg-6" v-for="movie in store.api_data.movies.allMovies.data" :key="movie.id">
-            <CardComponent :item="movie" />
-        </div> 
+    <div class=" sepia-gradient">
+        <div class="container py-5">
+            <input type="date" v-model="date" @change="getFilmFromDate()">
+            <div class="movie-list container">
+                <div class="row align-items-center">
+                    <div class="col col-12 col-xxl-6 py-5 d-flex justify-content-center"
+                        v-for="movie in store.api_data.movies.allMovies.data" :key="movie.id">
+                        <MovieCardComponent :props="movie">
+                        </MovieCardComponent>
+                    </div>
+                </div>
 
-        <div class="card" >
-            <img src="/public/images/right-part.jpg" class="card-img-top"
-                alt="" />
-            <div class="card-body">
-                <h5 class="card-title"></h5>
-                <h6 v-if="item.alias"></h6>
-                <p class="card-text">
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>
@@ -25,31 +18,38 @@
 
 <script>
 import { store } from '../store';
-import CardComponent from '../components/CardComponent.vue';
+import MovieCardComponent from '../components/MovieCardComponent.vue';
 export default {
 
     name: 'MoviesListComponent',
     components: {
+        MovieCardComponent,
 
-        CardComponent
     },
     data() {
         return {
             store,
             date: '',
-           
+            currentDate: '',
+            nextWeekDate: '',
+
         }
     },
     methods: {
         getFilmFromDate() {
             this.store.methods.getAllElements('movies', { date: this.date });
-        }
+        },
     },
     created() {
-        this.store.methods.getAllElements('movies');
-        this.store.methods.getAllElements('projections'); 
-        this.store.methods.getAllElements('movies', { date: this.date });
-    }
+        const today = new Date(); // Creazione di un oggetto Date con la data e l'ora attuali
+        this.currentDate = today.toISOString().slice(0, 10);
+        const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000); // Aggiungi 7 giorni in millisecondi
+        this.nextWeekDate = nextWeek.toISOString().slice(0, 10); // Ottieni la data tra una settimana nel formato 'YYYY-MM-DD'
+        // this.store.methods.getAllElements('movies');
+        console.log(this.currentDate, this.nextWeekDate);
+        this.store.methods.getAllElements('movies', { currentDate: this.currentDate, nextWeekDate: this.nextWeekDate });
+    },
+
 }
 
 </script>

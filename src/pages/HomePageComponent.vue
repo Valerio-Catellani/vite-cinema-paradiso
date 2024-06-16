@@ -26,7 +26,7 @@
         <div
           class="d-flex flex-column flex-lg-row info-animate w-100 rounded-5 bg-light my-5 p-3 gradient-white-top shadow-white justify-content-center align-items-center">
           <div class="img-container rounded-circle overflow-hidden me-4">
-            <img class="img-fluid" src="/public/images/wrapper_paradiso_2.jpeg" alt="logo" />
+            <img class="img-fluid" src="/images/wrapper_paradiso_2.jpeg" alt="logo" />
           </div>
           <div class="p-2">
             <h3>About us</h3>
@@ -49,7 +49,7 @@
         <div
           class="d-flex w-100 flex-column flex-lg-row info-animate rounded-5 bg-light my-5 p-3 gradient-white-top shadow-white justify-content-center align-items-center align-self-end">
           <div class="img-container rounded-circle overflow-hidden me-4 order-lg-2">
-            <img class="img-fluid" src="/public/images/wrapper_paradiso_2.jpeg" alt="logo" />
+            <img class="img-fluid" src="/images/wrapper_paradiso_2.jpeg" alt="logo" />
           </div>
           <div class="order-lg-1 p-2">
             <h3>I Nostri Orari</h3>

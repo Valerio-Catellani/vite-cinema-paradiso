@@ -4,17 +4,16 @@
             class="fixed-header container hype-w-80x100 d-flex margin-x-auto rounded-2 align-items-center justify-content-between">
             <div class="d-flex h-100 align-items-center">
                 <div class="logo-img-container d-flex align-items-center">
-                    <img class="img-fluid hype-color-invert rounded-circle"
-                        src="/public/images/cinema_paradiso_logo.png" alt="logo" />
+                    <img class="img-fluid hype-color-invert rounded-circle" src="/images/cinema_paradiso_logo.png"
+                        alt="logo" />
                 </div>
                 <div id="hype-nav-menu" class="d-flex h-100 d-none d-lg-block align-items-center">
                     <ul class="navbar-nav h-100 mb-2 mb-lg-0 d-flex flex-row align-items-center">
                         <li v-for="links in navLinks" :key="links.id"
-                            class="nav-item d-flex align-items-center px-3 custom-border"
-                            @click="this.store.methods.changePage()">
-                            <router-link :to="links.path" class="nav-link" exact>{{
+                            class="nav-item d-flex align-items-center px-3 custom-border">
+                            <router-link :to="links.path" class="nav-link">{{
                                 capitalizeString(links.name)
-                                }}</router-link>
+                            }}</router-link>
                         </li>
                     </ul>
                 </div>
@@ -40,15 +39,14 @@
                     </form>
                 </div>
                 <div id="hype-nav-kebab-menu" ref="hypeNavKebabMenu"
-                    class="bar-input active-color rounded-bottom-2 position-absolute container d-none">
+                    class="bar-input active-color rounded-bottom-2 position-absolute container d-none d-lg-none">
                     <div class="w-100 d-flex align-content-center justify-content-center p-3">
                         <ul class="fs-6 w-100 text-decoration-none list-unstyled text-center gap-2 m-0">
                             <li v-for="links in navLinks" :key="links.id"
-                                class="py-1 border-bottom border-dark border-1"
-                                @click="this.store.methods.changePage()">
+                                class="py-1 border-bottom border-dark border-1">
                                 <router-link :to="links.path" class="nav-link" exact>{{
                                     capitalizeString(links.name)
-                                }}</router-link>
+                                    }}</router-link>
                             </li>
                         </ul>
                     </div>

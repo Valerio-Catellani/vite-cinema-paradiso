@@ -94,6 +94,13 @@ export const store = reactive({
       },
 
 
+
+
+
+
+
+
+
       getSingleMovie(slug) {
          axios.get(`${store.apiBaseUrl}/movies/${slug}`).then((response) => {
             store.api_data.singleMovie = response.data.results;
@@ -118,12 +125,7 @@ export const store = reactive({
          })
       },
 
-      changePage() {
-         store.animation.changePage = true;
-         setTimeout(() => {
-            store.animation.changePage = false;
-         }, 1000);
-      }
+
 
    },
 
