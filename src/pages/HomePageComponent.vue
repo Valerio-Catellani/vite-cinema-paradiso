@@ -30,7 +30,7 @@
           </div>
           <div class="p-2">
             <h3>About us</h3>
-            <P>
+            <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Provident dolores iste, reiciendis vel maxime optio quos eaque,
               voluptatum nostrum magnam non numquam hic! Cumque quam temporibus,
@@ -43,7 +43,7 @@
               quas animi quod tenetur distinctio? Omnis doloribus voluptatibus
               labore, ab modi atque deserunt ullam veniam velit soluta molestias
               placeat cumque in iure quis saepe aliquid, ipsum, explicabo odio.
-            </P>
+            </p>
           </div>
         </div>
         <div
@@ -53,7 +53,7 @@
           </div>
           <div class="order-lg-1 p-2">
             <h3>I Nostri Orari</h3>
-            <P>
+            <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Provident dolores iste, reiciendis vel maxime optio quos eaque,
               voluptatum nostrum magnam non numquam hic! Cumque quam temporibus,
@@ -66,7 +66,7 @@
               quas animi quod tenetur distinctio? Omnis doloribus voluptatibus
               labore, ab modi atque deserunt ullam veniam velit soluta molestias
               placeat cumque in iure quis saepe aliquid, ipsum, explicabo odio.
-            </P>
+            </p>
           </div>
         </div>
       </div>

@@ -13,11 +13,11 @@
             </h2>
             <div class="container">
                 <div class="row mt-5">
-                    <div class=" col-12 col-xl-5">
+                    <div class=" col-12 col-lg-5">
                         <img class="img-fluid w-100" :src="store.api_data.movies.singleMovie.poster_path"
                             :alt="store.api_data.movies.singleMovie.title">
                     </div>
-                    <div class="col-12 col-xl-7">
+                    <div class="col-12 col-lg-7 d-flex flex-column justify-content-between">
                         <h3>Trama</h3>
                         <p class="overview py-3 pe-3">{{ store.api_data.movies.singleMovie.overview }}
 
@@ -26,8 +26,38 @@
                         <p class="overview pe-3">{{ store.api_data.movies.singleMovie.original_language }}
 
                         </p>
+                        <div class="mt-auto">
+                            <img class="img-fluid w-100" :src="store.api_data.movies.singleMovie.backdrop_path"
+                                alt="backdrop-img">
+                        </div>
 
                     </div>
+
+                    <div class="container">
+                        <h1 class="text-center fs-1 fw-bold text-danger hype-text-shadow my-5">Proiezioni</h1>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" scope="col">Data</th>
+                                    <th class="text-center" scope="col">Orario</th>
+                                    <th class="text-center" scope="col">Sala</th>
+                                    <th class="text-center" scope="col">Prezzo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="projection in store.api_data.movies.singleMovie.projections">
+                                    <td class="text-center">{{ formatDate(projection.date)  }}</td>
+                                    <td class="text-center">{{ projection.slot.name }}</td>
+                                    <td class="text-center">{{ projection.room.name }}</td>
+                                    <td class="text-center">{{ projection.final_ticket_price }}€</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
                     <div class="col-12">
                         <div class="accordion" id="review-accordion">
                             <div class="accordion-item">
@@ -42,11 +72,16 @@
 
 
                                     <div v-for="review in store.api_data.movies.singleMovie.reviews" :key="review.id"
-                                        class="container rounded-2 hype-shadow-white p-5 container-table text-white mb-2">
+                                        class="container rounded-2 hype-shadow-white p-5 container-table  mb-2">
                                         <h4>{{ review.author }}</h4>
-                                        <p>{{ }}</p>
-                                        <h6>{{ }}</h6>
-                                        <h6>{{ }}</h6>
+                                        <p>{{ formatDate(review.date) }}</p>
+                                        <p>{{ review.content }}</p>
+
+                                        <h5><span>valutazione:</span> <i v-for="index in (Math.floor(review.rating))"
+                                                :key="index" class="fa-solid fa-star hype-text-shadow text-warning"></i>
+                                            <i v-for="index in (10 - Math.floor(review.rating))" :key="index"
+                                                class="fa-solid fa-star hype-text-shadow text-white"></i>
+                                        </h5>
                                     </div>
 
 
@@ -65,6 +100,7 @@
 <script>
 import { store } from '../store';
 import JumboComponent from '../components/JumboComponent.vue';
+import { format } from 'date-fns';
 export default {
     name: 'MovieDetailsComponent',
     data() {
@@ -75,7 +111,12 @@ export default {
     components: {
         JumboComponent
     },
-
+    methods: {
+        formatDate(value) {
+            if (!value) return '';
+            return format(new Date(value), 'dd/MM/yyyy');
+        }
+    },
     created() {
         //store.methods.getSingleMovie(this.$route.params.slug);
         store.methods.getFullMovieProjectionsDetails(this.$route.params.slug);

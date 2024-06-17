@@ -123,10 +123,10 @@ export const store = reactive({
       },
 
       getAllProjections() {
-         axios.get(`${store.apiBaseUrl}/slots`).then((response) => {
+         axios.get(`${store.apiBaseUrl}/projections`).then((response) => {
             console.log(response);
-            //   store.api_data.AllProjects.data = response.data.results.data;
-            //   store.api_data.AllProjects.infoPagination = response.data.results;
+            //store.api_data.AllProjects.data = response.data.results.data;
+            store.api_data.AllProjects.infoPagination = response.data.results;
          }).catch((error) => {
             console.log(error);
             router.push({ name: 'not-found' })
