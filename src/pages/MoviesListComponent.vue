@@ -41,7 +41,7 @@ export default {
             const nextWeek = new Date(firstDay.getTime() + 7 * 24 * 60 * 60 * 1000); // Aggiungi 7 giorni in millisecondi
             this.nextWeekDate = nextWeek.toISOString().slice(0, 10); // Ottieni la data tra una settimana nel formato 'YYYY-MM-DD'
             // this.store.methods.getAllElements('movies');
-            console.log(this.currentDate, this.nextWeekDate);
+            //console.log(this.currentDate, this.nextWeekDate);
             this.store.methods.getAllElements('movies', { currentDate: this.currentDate, nextWeekDate: this.nextWeekDate });
         },
     },

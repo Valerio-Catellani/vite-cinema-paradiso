@@ -1,31 +1,35 @@
 <template>
-    <div class="movie-component d-flex flex-column ">
-        <div class="ciack-1 shadow">
-        </div>
-        <div class="ciack-2 text-white d-flex align-items-end border-5 overflow-hidden shadow rounded-bottom-5">
-            <div class="img-container hype-h-90x100 position-relative">
-                <div class="info h-100 pt-2 w-100 position-absolute top-0 d-flex flex-column">
-                    <h2 class="text-center hype-text-shadow ">{{
-                        props.title
+    <router-link :to="`/movies/${props.slug}`">
+
+        <div class="movie-component d-flex flex-column ">
+            <div class="ciack-1 shadow">
+            </div>
+            <div class="ciack-2 text-white d-flex align-items-end border-5 overflow-hidden shadow rounded-bottom-5">
+                <div class="img-container hype-h-90x100 position-relative">
+                    <div class="info h-100 pt-2 w-100 position-absolute top-0 d-flex flex-column">
+                        <h2 class="text-center hype-text-shadow ">{{
+                            props.title
                         }}
-                    </h2>
-                    <div class="rating d-flex justify-content-center gap-1"><i
-                            v-for="index in Math.floor(props.avarage_rating)" :key="index"
-                            class="fa-solid fa-star hype-text-shadow text-warning"></i>
-                    </div>
-                    <div class="mt-auto px-2 py-2">
-                        <h5 class="info-lang">Lingua Originale: {{ props.original_language }}</h5>
-                        <h6 class="info-link text-decoration-underline">Visualizza tutti i dettagli relativi alle
-                            proiezioni</h6>
+                        </h2>
+                        <div class="rating d-flex justify-content-center gap-1"><i
+                                v-for="index in Math.floor(props.avarage_rating)" :key="index"
+                                class="fa-solid fa-star hype-text-shadow text-warning"></i>
+                        </div>
+                        <div class="mt-auto px-2 py-2">
+                            <h5 class="info-lang">Lingua Originale: {{ props.original_language }}</h5>
+                            <h6 class="info-link text-decoration-underline">Visualizza tutti i dettagli relativi alle
+                                proiezioni</h6>
+                        </div>
+
                     </div>
 
+                    <img class="img-fluid h-100" :src="props.backdrop_path">
                 </div>
 
-                <img class="img-fluid h-100" :src="props.backdrop_path">
             </div>
-
         </div>
-    </div>
+    </router-link>
+
 
 </template>
 

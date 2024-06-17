@@ -58,6 +58,7 @@ export const store = reactive({
       // params = { page: 1, type: '' } da inserire dnetro alla funzione getMovies
       //& elements =  'movies', 'rooms', 'reviews', 'projections', 'slots' }
       getAllElements(element, params = {}) {
+
          axios.get(`${store.apiBaseUrl}/${element}`, { params }).then((response) => {
             switch (element) {
                case 'movies': {
@@ -93,17 +94,10 @@ export const store = reactive({
          })
       },
 
-
-
-
-
-
-
-
-
       getSingleMovie(slug) {
          axios.get(`${store.apiBaseUrl}/movies/${slug}`).then((response) => {
-            store.api_data.singleMovie = response.data.results;
+            store.api_data.movies.singleMovie = response.data.results;
+            console.log(response.data.results);
          })
       },
 
@@ -113,6 +107,20 @@ export const store = reactive({
          })
       },
 
+      getFullMovieProjectionsDetails(slug) {
+         console.log(slug);
+         axios.get(`${store.apiBaseUrl}/projections`, {
+            params: {
+               movieSlug: slug
+            }
+         }).then((response) => {
+            store.api_data.movies.singleMovie = response.data.results.movie;
+            store.api_data.movies.singleMovie.projections = response.data.results.projections;
+            console.log(store.api_data.movies.singleMovie);
+            //store.api_data.movies.singleMovie = response.data.results;
+            console.log(response.data.results);
+         })
+      },
 
       getAllProjections() {
          axios.get(`${store.apiBaseUrl}/slots`).then((response) => {
