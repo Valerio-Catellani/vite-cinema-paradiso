@@ -4,8 +4,7 @@
             class="fixed-header container hype-w-80x100 d-flex margin-x-auto rounded-2 align-items-center justify-content-between">
             <div class="d-flex h-100 align-items-center">
                 <div class="logo-img-container d-flex align-items-center">
-                    <img class="img-fluid hype-color-invert rounded-circle" src="/images/cinema_paradiso_logo.png"
-                        alt="logo" />
+                    <img class="img-fluid rounded-circle" src="/images/cinema_paradiso_logo.png" alt="logo" />
                 </div>
                 <div id="hype-nav-menu" class="d-flex h-100 d-none d-lg-block align-items-center">
                     <ul class="navbar-nav h-100 mb-2 mb-lg-0 d-flex flex-row align-items-center">
@@ -22,10 +21,11 @@
                 <div id="hype-nav-login-button" ref="hypeNavLoginButton"
                     class="icon-container rounded-top-2 d-flex flex-column justify-content-center order-2 w-auto"
                     role="button">
-                    <a href="http://localhost:8000/login" class="text-decoration-none text-white">
+                    <a href="http://localhost:8000/login"
+                        class="text-decoration-none text-white d-flex flex-column align-items-center">
                         <i class="fa-solid fa-user"></i>
+                        <span class="small" style="font-size:12px">Area Riservata</span>
                     </a>
-                    <span class="small" style="font-size:12px">Area Riservata</span>
                 </div>
                 <div id="hype-nav-kebab-button" ref="hypeNavKebabButton"
                     class="icon-container rounded-top-2 d-lg-none order-1" role="button"
