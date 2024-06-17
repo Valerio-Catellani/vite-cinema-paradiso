@@ -62,8 +62,8 @@ export const store = reactive({
          axios.get(`${store.apiBaseUrl}/${element}`, { params }).then((response) => {
             switch (element) {
                case 'movies': {
-                  store.api_data.movies.allMovies.data = response.data.results.data;
-                  store.api_data.movies.allMovies.infoPagination = response.data.results;
+                  store.api_data.movies.allMovies.data = response.data.results;
+                  //store.api_data.movies.allMovies.infoPagination = response.data.results;
                   break;
                }
                case 'rooms': {
@@ -133,7 +133,6 @@ export const store = reactive({
          })
       },
       async getFlagIcon(language) {
-         console.log(language);
          let formattedLanguege;
          switch (language) {
             case 'en':
