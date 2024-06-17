@@ -1,7 +1,8 @@
 <template>
     <div class=" sepia-gradient">
         <div class="container py-5">
-            <input type="date" v-model="date" @change="getFilmFromDate()">
+            <!-- // <input type="date" v-model="date" @change="getFilmFromDate()"> -->
+            <h1 class="text-center text-white hype-text-shadow display-1 fw-bold">Al cinema questa Settimana</h1>
             <div class="movie-list container">
                 <div class="row align-items-center">
                     <div class="col col-12 col-xxl-6 py-5 d-flex justify-content-center"
@@ -10,7 +11,6 @@
                         </MovieCardComponent>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -36,18 +36,18 @@ export default {
         }
     },
     methods: {
-        getFilmFromDate() {
-            this.store.methods.getAllElements('movies', { date: this.date });
+        getFilmsForWeek(firstDay) {
+            this.currentDate = firstDay.toISOString().slice(0, 10);
+            const nextWeek = new Date(firstDay.getTime() + 7 * 24 * 60 * 60 * 1000); // Aggiungi 7 giorni in millisecondi
+            this.nextWeekDate = nextWeek.toISOString().slice(0, 10); // Ottieni la data tra una settimana nel formato 'YYYY-MM-DD'
+            // this.store.methods.getAllElements('movies');
+            console.log(this.currentDate, this.nextWeekDate);
+            this.store.methods.getAllElements('movies', { currentDate: this.currentDate, nextWeekDate: this.nextWeekDate });
         },
     },
     created() {
-        const today = new Date(); // Creazione di un oggetto Date con la data e l'ora attuali
-        this.currentDate = today.toISOString().slice(0, 10);
-        const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000); // Aggiungi 7 giorni in millisecondi
-        this.nextWeekDate = nextWeek.toISOString().slice(0, 10); // Ottieni la data tra una settimana nel formato 'YYYY-MM-DD'
-        // this.store.methods.getAllElements('movies');
-        console.log(this.currentDate, this.nextWeekDate);
-        this.store.methods.getAllElements('movies', { currentDate: this.currentDate, nextWeekDate: this.nextWeekDate });
+        const today = new Date();
+        this.getFilmsForWeek(today);
     },
 
 }

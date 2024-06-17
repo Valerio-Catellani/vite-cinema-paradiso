@@ -29,30 +29,30 @@ const router = createRouter({
             },
             component: MoviesListComponent
         },
-        // {
-        //     path: '/projections',
-        //     name: 'projections',
-        //     meta: {
-        //         visible: true
-        //     },
-        //     component: ProjectionsListComponent
-        // },
-        // {
-        //     path: '/rooms',
-        //     name: 'rooms',
-        //     meta: {
-        //         visible: true
-        //     },
-        //     component: RoomsListComponent
-        // },
-        // {
-        //     path: '/projections/:id',
-        //     name: 'projections-details',
-        //     meta: {
-        //         visible: false
-        //     },
-        //     component: ProjectionDetailsComponent
-        // },
+        {
+            path: '/projections',
+            name: 'projections',
+            meta: {
+                visible: true
+            },
+            component: ProjectionsListComponent
+        },
+        {
+            path: '/rooms',
+            name: 'rooms',
+            meta: {
+                visible: true
+            },
+            component: RoomsListComponent
+        },
+        {
+            path: '/projections/:id',
+            name: 'projections-details',
+            meta: {
+                visible: false
+            },
+            component: ProjectionDetailsComponent
+        },
         {
             path: '/movies/:slug',
             name: 'movie-details',
@@ -61,22 +61,22 @@ const router = createRouter({
             },
             component: MovieDetailsComponent
         },
-        // {
-        //     path: '/rooms/:id',
-        //     name: 'rooms-details',
-        //     meta: {
-        //         visible: false
-        //     },
-        //     component: RoomDetailsComponent
-        // },
-        // {
-        //     path: '/contacts',
-        //     name: 'contacts',
-        //     meta: {
-        //         visible: true
-        //     },
-        //     component: ContactComponent
-        // },
+        {
+            path: '/rooms/:id',
+            name: 'rooms-details',
+            meta: {
+                visible: false
+            },
+            component: RoomDetailsComponent
+        },
+        {
+            path: '/contacts',
+            name: 'contacts',
+            meta: {
+                visible: true
+            },
+            component: ContactComponent
+        },
         {
             path: '/:pathMatch(.*)*',
             name: 'not-found',
