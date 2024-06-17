@@ -20,10 +20,12 @@
             </div>
             <div class="user-account gap-3 d-flex fs-3 align-self-stretch align-items-end">
                 <div id="hype-nav-login-button" ref="hypeNavLoginButton"
-                    class="icon-container rounded-top-2 d-flex flex-column justify-content-center order-2"
-                    role="button"><a href="http://localhost:8000/login" class="text-decoration-none text-white">
+                    class="icon-container rounded-top-2 d-flex flex-column justify-content-center order-2 w-auto"
+                    role="button">
+                    <a href="http://localhost:8000/login" class="text-decoration-none text-white">
                         <i class="fa-solid fa-user"></i>
                     </a>
+                    <span class="small" style="font-size:12px">Area Riservata</span>
                 </div>
                 <div id="hype-nav-kebab-button" ref="hypeNavKebabButton"
                     class="icon-container rounded-top-2 d-lg-none order-1" role="button"
