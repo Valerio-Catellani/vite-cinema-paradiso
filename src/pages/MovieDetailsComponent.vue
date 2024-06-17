@@ -13,47 +13,24 @@
             </h2>
             <div class="container">
                 <div class="row mt-5">
-                    <div class=" col-12 col-xl-5">
+                    <div class=" col-12 col-lg-5">
                         <img class="img-fluid w-100" :src="store.api_data.movies.singleMovie.poster_path"
                             :alt="store.api_data.movies.singleMovie.title">
                     </div>
-                    <div class="col-12 col-xl-7">
+                    <div class="col-12 col-lg-7">
                         <h3>Trama</h3>
                         <p class="overview py-3 pe-3">{{ store.api_data.movies.singleMovie.overview }}
 
                         </p>
                         <h3>Lingua</h3>
-                        <p class="overview pe-3">{{ store.api_data.movies.singleMovie.original_language }}
+                        <p class="overview pe-3">{{
+                            store.methods.getFlagIcon(store.api_data.movies.singleMovie.original_language) }}
 
                         </p>
 
                     </div>
                     <div class="col-12">
-                        <div class="accordion" id="review-accordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Tutte Le Review
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    data-bs-parent="#accordionExample">
 
-
-                                    <div v-for="review in store.api_data.movies.singleMovie.reviews" :key="review.id"
-                                        class="container rounded-2 hype-shadow-white p-5 container-table text-white mb-2">
-                                        <h4>{{ review.author }}</h4>
-                                        <p>{{ }}</p>
-                                        <h6>{{ }}</h6>
-                                        <h6>{{ }}</h6>
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -77,9 +54,11 @@ export default {
     },
 
     created() {
-        //store.methods.getSingleMovie(this.$route.params.slug);
+
         store.methods.getFullMovieProjectionsDetails(this.$route.params.slug);
     }
+
+
 }
 
 </script>
