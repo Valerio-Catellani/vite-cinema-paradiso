@@ -132,11 +132,92 @@ export const store = reactive({
             router.push({ name: 'not-found' })
          })
       },
+      async getFlagIcon(language) {
+         console.log(language);
+         let formattedLanguege;
+         switch (language) {
+            case 'en':
+               formattedLanguege = 'gb';
+               break;
+            case 'us':
+               formattedLanguege = 'us';
+               break;
+            case 'pt':
+               formattedLanguege = 'pt';
+               break;
+            case 'it':
+               formattedLanguege = 'it';
+               break;
+            case 'ja':
+               formattedLanguege = 'jp';
+               break;
+            case 'ko':
+               formattedLanguege = 'kr';
+               break;
+            case 'fr':
+               formattedLanguege = 'fr';
+               break;
+            case 'de':
+               formattedLanguege = 'de';
+               break;
+            case 'es':
+               formattedLanguege = 'es';
+               break;
+            case 'ru':
+               formattedLanguege = 'ru';
+               break;
+            case 'cr':
+               formattedLanguege = 'cr';
+               break;
+            case 'cs':
+               formattedLanguege = 'cz';
+               break;
+            case 'ar':
+               formattedLanguege = 'sa';
+               break;
+            case 'ta':
+               formattedLanguege = 'in';
+               break;
+            case 'zh':
+               formattedLanguege = 'cn';
+               break;
+            case 'te':
+               formattedLanguege = 'in';
+               break;
+            case 'fa':
+               formattedLanguege = 'ir';
+               break;
+            default:
+               formattedLanguege = `${language}`;
+         }
+
+         const flagUrl = `https://flagcdn.com/80x60/${formattedLanguege}.png`;
+
+         try {
+            return axios.get(flagUrl)
+               .then(() => {
+                  return flagUrl;
+               })
+               .catch((error) => {
+                  console.log('there is no flag for', formattedLanguege);
+                  return null;
+               });
+         } catch (error) {
+            console.log('there is no flag for', formattedLanguege);
+            return null;
+         }
+         // Check if the flag URL is valid
+      }
 
 
 
-   },
 
 
 
-});
+   }
+
+
+},
+
+
+);
