@@ -39,7 +39,7 @@
                             <div class="footer-widget">
                                 <div class="footer-logo d-flex justify-content-center ">
                                     <a href="index.html"><img src="/public/images/cinema_paradiso_logo.png"
-                                            class="img-fluid hype-color-invert" alt="logo"></a>
+                                            class="img-fluid" alt="logo"></a>
                                 </div>
                                 <div class="footer-text">
                                     <p>Cinema paradiso, un esperienza paradisiaca.</p>

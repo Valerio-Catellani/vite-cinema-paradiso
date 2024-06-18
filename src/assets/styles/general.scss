@@ -18,6 +18,20 @@ $fa-font-path: "../fonts/webfonts";
 
 body {
   font-family: "Lexend", sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.title-2nd {
+  font-family: "Lexend", sans-serif;
+  font-weight: 600;
+  font-size: 7rem;
+  transform: translateY(-30%);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .shadow-white {

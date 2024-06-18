@@ -1,16 +1,27 @@
 <template>
     <div class="gallery">
-        <img src="https://picsum.photos/id/1004/400/400" alt="a lovely kiss in the night">
-        <img src="https://picsum.photos/id/1013/400/400" alt="a women inside a car">
-        <img src="https://picsum.photos/id/1066/400/400" alt="a baby">
-        <img src="https://picsum.photos/id/65/400/400" alt="a girl">
+        <template v-if="store.api_data.rooms.allRooms.data">
+            <img v-for="element in store.api_data.rooms.allRooms.data" :key="element.id"
+                :src="store.imgBasePath + element.room_image">
+        </template>
     </div>
 </template>
 
 <script>
+import { store } from '../store';
 export default {
 
     name: 'MyCarusel',
+    data() {
+        return {
+            store
+        }
+    },
+
+    created() {
+        store.methods.getAllElements('rooms');
+        console.log(store.api_data.rooms.allRooms.data);
+    }
 
 }
 </script>
